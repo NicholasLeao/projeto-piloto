@@ -1,17 +1,16 @@
-<<<<<<< HEAD
 import CardPequeno from "../components/CardPequeno";
 import Formulario from "../components/Formulario";
 import CardGrande from "../components/CardGrande";
 import Modal from "../components/Modal";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect, useCallback } from "react";
-=======
-import CardPequeno from "../Components/CardPequeno";
-import styles from "../styles/Home.module.css"
->>>>>>> 6c56fd86fbfcf560fbe66fa4715dea78dc38fa8a
+import FormularioButton from "../components/FormularioButton";
+import axios from "axios";
 
 function Home() {
   // STATES
+  const [fetchDataState, setFetchDataState] = useState([]);
+  const [formToggleState, setFormToggleState] = useState(false);
   const [submitFormularioState, setSubmitFormularioState] = useState();
   const [formularioState, setFormularioState] = useState({
     titulo: "",
@@ -22,18 +21,44 @@ function Home() {
     tags: [],
   });
 
+  // EVENT HANDLER
+  const onClickFormulario = () => {
+    setFormToggleState((s) => !s);
+  };
+
+  // FETCH DATA DA API
+  const handleFetchData = useCallback(async () => {
+    const { data } = await axios.get(
+      "https://ironrest.herokuapp.com/projetopilotowillnick"
+    );
+    setFetchDataState(data);
+    console.log(typeof data, data);
+  }, []);
+
+  useEffect(() => {
+    handleFetchData();
+  }, [handleFetchData]);
+
   // ==== JSX ================================
   return (
     <>
       <main className={styles["home"]}>
         <div>
-          <CardPequeno />
-          <Formulario
-            submitFormularioState={submitFormularioState}
-            setSubmitFormularioState={setSubmitFormularioState}
-            formularioState={formularioState}
-            setFormularioState={setFormularioState}
-          />
+          {fetchDataState.map((data) => (
+            <CardPequeno key={data._id} />
+          ))}
+
+          {!formToggleState ? (
+            <FormularioButton onClickFormulario={onClickFormulario} />
+          ) : (
+            <Formulario
+              submitFormularioState={submitFormularioState}
+              setSubmitFormularioState={setSubmitFormularioState}
+              formularioState={formularioState}
+              setFormularioState={setFormularioState}
+            />
+          )}
+
           <CardGrande />
           <Modal />
         </div>

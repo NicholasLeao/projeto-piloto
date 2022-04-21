@@ -23,7 +23,11 @@ function Formulario(props) {
       return;
     }
 
-    if (!/\w\s+/.test(props.formularioState.tags)) {
+    if (
+      !/^\s*[A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)*\s*$/.test(
+        props.formularioState.tags
+      )
+    ) {
       alert("tags erradas");
       return;
     }
