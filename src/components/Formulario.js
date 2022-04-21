@@ -1,4 +1,7 @@
 import axios from "axios";
+import "../styles/Card.css"
+
+
 function Formulario(props) {
   // EVENT HANDLERS
   const handleChange = (e) => {
@@ -52,7 +55,9 @@ function Formulario(props) {
   return (
     <>
       <form>
-        <div>
+        <div className="divForm">
+
+        <div className="formulario">
           <label htmlFor="titulo">Titulo</label>
           <input
             onChange={handleChange}
@@ -110,8 +115,15 @@ function Formulario(props) {
             value={props.formularioState.tags}
             placeholder="Tags"
           ></input>
-          <button onClick={handleClick}>Submit</button>
-        </div>
+          </div>
+
+          <div className="iEb">
+            <img src="https://www.portalimprensa.com.br/content_file_storage/2021/06/24/impresso.PNG" alt="#"/>
+            <button onClick={handleClick}>SUBMIT</button>
+          </div>
+          
+          </div>
+        
       </form>
     </>
   );

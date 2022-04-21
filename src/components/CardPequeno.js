@@ -1,6 +1,5 @@
 import styles from "../styles/CardPequeno.module.css";
 import "../styles/Card.css"
-import Jornal from "../assets/images/jornal.jpeg"
 
 
 function CardPequeno(props) {
@@ -9,7 +8,7 @@ function CardPequeno(props) {
       <div className={styles["card-pequeno"]}>
 
         <div className="container">
-          <img src={Jornal} alt="#" /> 
+          <img src="https://www.portalimprensa.com.br/content_file_storage/2021/06/24/impresso.PNG" alt="#" /> 
         </div>
 
         <div className="div1">
