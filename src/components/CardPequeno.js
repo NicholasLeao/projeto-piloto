@@ -1,25 +1,38 @@
 import styles from "../styles/CardPequeno.module.css";
+import "../styles/Card.css"
+import Jornal from "../assets/images/jornal.jpeg"
+
 
 function CardPequeno(props) {
   return (
     <>
       <div className={styles["card-pequeno"]}>
-        <div>
+
+        <div className="container">
+          <img src={Jornal} alt="#" /> 
+        </div>
+
+        <div className="div1">
           <h2>TITULO DO ANUNCIO</h2>
-          <img src="#" alt="#" />
-          <ul>
+
+          <ul className="divBtn">
             <li>
               <button>TAG</button>
             </li>
+
             <li>
               <button>TAG</button>
             </li>
+
             <li>
               <button>TAG</button>
             </li>
+
           </ul>
         </div>
-        <button>SAIBA MAIS</button>
+
+        <button className={"saiba-mais"}>SAIBA MAIS</button>
+
       </div>
     </>
   );

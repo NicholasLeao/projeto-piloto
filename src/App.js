@@ -1,10 +1,10 @@
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import "./styles/App.css"
 
 function App() {
   return (
     <div className="app">
-     <h2>oi, mundo</h2>
+     <h1>oi, mundo</h1>
      <Home/>
     </div>
   );

@@ -1,4 +1,4 @@
-import CardPequeno from "../components/CardPequeno";
+import CardPequeno from "../Components/CardPequeno";
 import styles from "../styles/Home.module.css"
 
 function Home() {
