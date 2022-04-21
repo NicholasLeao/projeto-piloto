@@ -1,12 +1,9 @@
+/* ESTILIZAÇÃO CARD PEQUENA*/
+
 .card-pequeno {
     border: 2px solid blue;
     width: 700px;
     height: 120px;
-<<<<<<< HEAD
-  }
-  
-  
-=======
     background-color: white;
   }
 
@@ -17,7 +14,6 @@ h2 {
 
 .container img {
     width: 150px;
-    margin-top: -23px;
 }
 
 .divBtn {
@@ -38,7 +34,6 @@ h2 {
     
 }
 
-
 .saiba-mais {
     background-color:grey;
     color: white;
@@ -50,4 +45,112 @@ h2 {
     font-weight: bold;
 }
 
->>>>>>> 6c56fd86fbfcf560fbe66fa4715dea78dc38fa8a
+/* ESTILIZAÇÃO DO CARD GRANDE */
+
+.container1 {
+    display: flex;
+    margin-top: 50px;
+}
+
+.cardGrande {
+    border-right: 1px solid black;   
+}
+
+.cardGrande img {
+    width: 300px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.cardGrande h2 {
+    text-align: center;
+}
+
+.divBtn1 {
+    display: flex;
+    list-style-type: none;
+    gap: 5px;
+    margin-top: 5px;
+    
+}
+
+.divBtn1 #btn3 {
+    margin-right: 100px;
+}
+
+.divBtn1 #btn1 {
+    margin-left: 70px;
+    border: none;
+}
+
+.divBtn1 button {
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+
+
+.descricao {
+    margin-left: 20px;
+
+}
+
+.descricao p {
+    margin-top: 10px;
+    width: 350px;
+}
+
+
+/* ESTILIZAÇÃO FORMULÁRIO */
+
+.divForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.formulario input {
+    width: 300px;
+    padding: 10px;
+}
+
+.formulario label {
+    margin-top: 10px;
+}
+
+.formulario textarea {
+    width: 300px;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.iEb {
+    display: flex;
+    flex-direction: column;
+}
+
+.iEb img {
+    width: 350px;
+    margin-top: 30px;
+    margin-right: 25px;
+}
+
+.iEb button {
+    background-color:grey;
+    color: white;
+    border: 1px solid dimgray;
+    font-weight: bold;
+    font-size: 23px;
+    width: 100px;
+    margin-top: 150px;
+    margin-left: 250px;
+}
