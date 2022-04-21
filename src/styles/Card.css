@@ -2,6 +2,52 @@
     border: 2px solid blue;
     width: 700px;
     height: 120px;
+<<<<<<< HEAD
   }
   
   
+=======
+    background-color: white;
+  }
+
+h2 {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.container img {
+    width: 150px;
+    margin-top: -23px;
+}
+
+.divBtn {
+    display: flex;
+    list-style-type: none;
+    gap: 5px;
+    margin-top: 5px;
+    
+}
+
+.divBtn button {
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 0px 10px;
+    
+}
+
+
+.saiba-mais {
+    background-color:grey;
+    color: white;
+    border: 1px solid dimgray;
+    margin-left: 170px;
+    font-size: 16px;
+    height: 30px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+>>>>>>> 6c56fd86fbfcf560fbe66fa4715dea78dc38fa8a
