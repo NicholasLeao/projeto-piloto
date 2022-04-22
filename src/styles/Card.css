@@ -1,156 +1,272 @@
 /* ESTILIZAÇÃO CARD PEQUENA*/
+element {
+  --p-col: #ffa726;
+  --p-light: #ffd95b;
+  --p-dark: #c77800;
+  --s-col: #26a69a;
+  --s-light: #64d8cb;
+  --s-dark: #00766c;
+  --white: #e8e8e8;
+}
 
 .card-pequeno {
-    border: 2px solid blue;
-    width: 700px;
-    height: 120px;
-    background-color: white;
-  }
+  /* border: 2px solid blue; */
+  width: 100%;
+  height: 120px;
+  background-color: #e8e8e8;
+  margin: 0;
+  padding: 10px 0;
+  border-radius: 15px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 h2 {
-    margin-left: 20px;
-    padding: 5px;
+  /* border: 2px solid rgb(212, 26, 26); */
+  width: auto;
+  text-align: left;
 }
 
 .container img {
-    width: 150px;
+  margin-left: 20px;
+  width: 150px;
 }
 
 .divBtn {
-    display: flex;
-    list-style-type: none;
-    gap: 5px;
-    margin-top: 5px;
-    
+  /* border: 2px solid slateblue; */
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+.div1 {
+  /* border: 2px solid rgb(78, 244, 13); */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 300px;
+  margin-left: 20px;
+}
+
+.div1 ul {
+  /* border: 2px solid brown; */
+  padding: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div1 h2 {
+  margin: 0;
 }
 
 .divBtn button {
-    border-radius: 50px;
-    border: none;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 0px 10px;
-    
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: #ffa726;
+  text-align: center;
+  padding: 0px 10px;
+  margin-right: 10px;
 }
 
 .saiba-mais {
-    background-color:grey;
-    color: white;
-    border: 1px solid dimgray;
-    margin-left: 170px;
-    font-size: 16px;
-    height: 30px;
-    margin-top: 50px;
-    font-weight: bold;
+  margin-right: 40px;
+  background-color: grey;
+  color: white;
+  border: 1px solid dimgray;
+  margin-left: 170px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  margin-top: 50px;
+  font-weight: bold;
+  padding: 5px 15px;
 }
 
 /* ESTILIZAÇÃO DO CARD GRANDE */
 
-.container1 {
-    display: flex;
-    margin-top: 50px;
+.card-grande {
+  /* border: 2px solid rgb(32, 39, 138); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 25px;
+
+  background-color: #e8e8e8;
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px 0;
 }
 
-.cardGrande {
-    border-right: 1px solid black;   
+.lado-esquerdo {
+  /* border: 2px solid gray; */
+  border-right: 1px solid black;
+  width: 350px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
-.cardGrande img {
-    width: 300px;
-    margin-left: 30px;
-    margin-top: 10px;
+.lado-esquerdo img {
+  width: 80%;
+  height: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.cardGrande h2 {
-    text-align: center;
+.lado-esquerdo h2 {
+  text-align: center;
 }
 
 .divBtn1 {
-    display: flex;
-    list-style-type: none;
-    gap: 5px;
-    margin-top: 5px;
-    
+  display: flex;
+  list-style-type: none;
+  gap: 5px;
+  margin-top: 5px;
 }
 
 .divBtn1 #btn3 {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
 .divBtn1 #btn1 {
-    margin-left: 70px;
-    border: none;
+  margin-left: 70px;
+  border: none;
 }
 
 .divBtn1 button {
-    border-radius: 50px;
-    border: none;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 0px 10px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 0px 10px;
 }
 
-
-
 .descricao {
-    margin-left: 20px;
-
+  /* border: 2px solid teal; */
 }
 
 .descricao p {
-    margin-top: 10px;
-    width: 350px;
+  margin-top: 10px;
+  width: 350px;
 }
-
 
 /* ESTILIZAÇÃO FORMULÁRIO */
 
 .divForm {
-    display: flex;
-    justify-content: space-between;
+  /* border: 2px solid green; */
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px 0;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8e8e8;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  /* border: 2px solid blue; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
 }
 
 .formulario input {
-    width: 300px;
-    padding: 10px;
+  border: 1px solid;
+  width: 300px;
+  padding: 10px;
 }
 
 .formulario label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .formulario textarea {
-    width: 300px;
-    padding: 10px;
-    padding-bottom: 50px;
+  width: 300px;
+  padding: 10px;
+  padding-bottom: 50px;
+  resize: none;
 }
 
 .iEb {
-    display: flex;
-    flex-direction: column;
+  /* border: 2px solid brown; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .iEb img {
-    width: 350px;
-    margin-top: 30px;
-    margin-right: 25px;
+  width: 300px;
+  height: 350px;
+  margin-top: 20px;
+  object-fit: cover;
 }
 
 .iEb button {
-    background-color:grey;
-    color: white;
-    border: 1px solid dimgray;
-    font-weight: bold;
-    font-size: 23px;
-    width: 100px;
-    margin-top: 150px;
-    margin-left: 250px;
+  background-color: #26a69a;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+.form-button {
+  margin-top: 25px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: #26a69a;
+  border: none;
+  color: white;
+  font-size: 23px;
+}
+
+.lado-direito {
+  /* border: 2px solid rgb(238, 130, 130); */
+  height: 280px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saiba-menos {
+  /* border: 2px solid brown; */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: right;
+  justify-content: end;
+  width: 100%;
+}
+
+.saiba-menos-btn {
+  background-color: grey;
+  color: white;
+  border: 1px solid dimgray;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  padding: 5px 15px;
 }
