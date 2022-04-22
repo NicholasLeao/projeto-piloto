@@ -1,6 +1,7 @@
 import styles from "../styles/CardPequeno.module.css";
 import "../styles/Card.css";
 
+
 function CardPequeno(props) {
   const { data } = props;
 
@@ -18,7 +19,7 @@ function CardPequeno(props) {
             src={
               data.imagem
                 ? data.imagem
-                : "https://www.portalimprensa.com.br/content_file_storage/2021/06/24/impresso.PNG"
+                : "https://esales.com.br/wp-content/uploads/2017/06/interbancos_esales_image_565-scaled.jpeg"
             }
             alt="#"
           />
@@ -43,9 +44,11 @@ function CardPequeno(props) {
           </ul>
         </div>
 
-        <button onClick={props.handleWindowState} className={"saiba-mais"}>
-          SAIBA MAIS
-        </button>
+          
+          <button onClick={props.handleWindowState} className={"saiba-mais"}>
+            SAIBA MAIS
+          </button>
+            
       </div>
     </>
   );

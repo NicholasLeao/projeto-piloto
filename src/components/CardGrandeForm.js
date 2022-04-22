@@ -11,11 +11,11 @@ function CardGrandeForm(props) {
 
   // ==== JSX ================================
   return (
-    <div className="card-grande">
-      <div className="lado-esquerdo">
-        <label htmlFor="titulo">Titulo</label>
+    <div className="card-grande editar">
+      <div className="lado-esquerdo editar-esquerdo">
+        <label htmlFor="titulo"><strong>Titulo</strong></label>
         <input name="titulo" value={data.titulo}></input>
-        <label htmlFor="tags">Tags</label>
+        <label htmlFor="tags"><strong>Tags</strong></label>
         <p>
           <small>(separe por espacos)</small>
         </p>
@@ -24,7 +24,7 @@ function CardGrandeForm(props) {
           className="divBtn"
           value={new String(data.tags).replaceAll(",", " ")}
         ></input>
-        <label htmlFor="imagem">Foto</label>
+        <label htmlFor="imagem"><strong>Foto</strong></label>
         <input
           name="imagem"
           value={
@@ -39,9 +39,9 @@ function CardGrandeForm(props) {
 
       <div className="lado-direito">
         <div className="descricao">
-          <label htmlFor="descricao">Descricao</label>
+          <label htmlFor="descricao"><strong>Descricao</strong></label>
           <input name="descricao" value={data.descricao}></input>
-          <label htmlFor="descricao">Corpo</label>
+          <label htmlFor="descricao"><strong>Corpo</strong></label>
           <textarea
             type="textarea"
             maxLength="280"
