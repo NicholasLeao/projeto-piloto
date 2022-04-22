@@ -57,7 +57,7 @@ function Formulario(props) {
   // ==== JSX ================================
   return (
     <>
-      <form>
+      <form onSubmit={handleClick}>
         <div className="divForm">
           <div className="formulario">
             <label htmlFor="titulo">Titulo</label>
@@ -132,7 +132,7 @@ function Formulario(props) {
               src="https://www.portalimprensa.com.br/content_file_storage/2021/06/24/impresso.PNG"
               alt="#"
             />
-            <button onClick={handleClick}>SUBMIT</button>
+            <button>SUBMIT</button>
           </div>
         </div>
       </form>
