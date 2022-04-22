@@ -1,35 +1,74 @@
-import CardPequeno from "../components/CardPequeno";
 import Formulario from "../components/Formulario";
-import CardGrande from "../components/CardGrande";
 import Modal from "../components/Modal";
-import styles from "../styles/Home.module.css";
+import "../styles/Home.css";
 import { useState, useEffect, useCallback } from "react";
+import FormularioButton from "../components/FormularioButton";
+import axios from "axios";
+import CardContainer from "../components/CardContainer";
 
 function Home() {
   // STATES
-  const [submitFormularioState, setSubmitFormularioState] = useState();
+  const [maxCardState, setCardMaxState] = useState([]);
+
+  const [fetchDataState, setFetchDataState] = useState([]);
+  const [formToggleState, setFormToggleState] = useState(false);
+
+  const [submitFormularioState, setSubmitFormularioState] = useState({});
   const [formularioState, setFormularioState] = useState({
     titulo: "",
     descricao: "",
     corpo: "",
     email: "",
     telefone: "",
-    tags: [],
+    imagem: "",
+    tags: "",
   });
+
+  // EVENT HANDLER
+  const onClickFormulario = () => {
+    setFormToggleState((s) => !s);
+  };
+
+  // FETCH DATA DA API
+  const handleFetchData = useCallback(async () => {
+    const { data } = await axios.get(
+      "https://ironrest.herokuapp.com/projetopilotowillnick"
+    );
+    setFetchDataState(data);
+  }, []);
+
+  useEffect(() => {
+    handleFetchData();
+  }, [handleFetchData]);
 
   // ==== JSX ================================
   return (
     <>
-      <main className={styles["home"]}>
+      <main className="home">
         <div>
-          <CardPequeno />
-          <Formulario
-            submitFormularioState={submitFormularioState}
-            setSubmitFormularioState={setSubmitFormularioState}
-            formularioState={formularioState}
-            setFormularioState={setFormularioState}
-          />
-          <CardGrande />
+          {/* ========= FORMULARIO ================= */}
+          {!formToggleState ? (
+            <FormularioButton onClickFormulario={onClickFormulario} />
+          ) : (
+            <Formulario
+              onClickFormulario={onClickFormulario}
+              submitFormularioState={submitFormularioState}
+              setSubmitFormularioState={setSubmitFormularioState}
+              formularioState={formularioState}
+              setFormularioState={setFormularioState}
+            />
+          )}
+
+          {/* ========= CARDS ================= */}
+          {fetchDataState.map((data) => (
+            <CardContainer
+              maxCardState={maxCardState}
+              setCardMaxState={setCardMaxState}
+              data={data}
+              key={`GG${data._id}`}
+            />
+          ))}
+
           <Modal />
         </div>
       </main>
