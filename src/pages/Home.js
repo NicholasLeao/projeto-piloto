@@ -9,7 +9,9 @@ import CardGrandeForm from "../components/CardGrandeForm";
 import { Routes, Route } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useLocation, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Home() {
+  const navigate = useNavigate();
   // PARAMS
   const { pathname } = useLocation();
   const path = pathname.replace("/tags/", "");
@@ -51,6 +53,9 @@ function Home() {
     <>
       <main className="home">
         <div>
+          <h1 className="title-main" onClick={() => navigate("/")}>
+            Busque conhecimento
+          </h1>
           {/* ========= FORMULARIO ================= */}
           {!formToggleState ? (
             <FormularioButton onClickFormulario={onClickFormulario} />
@@ -72,9 +77,11 @@ function Home() {
             />
             <Route
               path="/tags/:tagName"
-              element={fetchDataState.filter(d=>d.tags.includes(path)).map((data) => (
-                <CardContainer data={data} key={`GG${data._id}`} />
-              ))}
+              element={fetchDataState
+                .filter((d) => d.tags.includes(path))
+                .map((data) => (
+                  <CardContainer data={data} key={`GG${data._id}`} />
+                ))}
             />
           </Routes>
           <Modal />

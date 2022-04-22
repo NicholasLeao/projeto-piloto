@@ -1,7 +1,9 @@
 import axios from "axios";
 import "../styles/Card.css";
+import { useNavigate } from "react-router-dom";
 
 function Formulario(props) {
+  const navigate = useNavigate();
   // EVENT HANDLERS
   const handleChange = (e) => {
     props.setFormularioState((prev) => {
@@ -32,13 +34,10 @@ function Formulario(props) {
     }
 
     // MANDAR POST
-    axios.post(
-      "https://ironrest.herokuapp.com/projetopilotowillnick",
-      {
-        ...props.formularioState,
-        tags: props.formularioState.tags.trim().split(" "),
-      }
-    );
+    axios.post("https://ironrest.herokuapp.com/projetopilotowillnick", {
+      ...props.formularioState,
+      tags: props.formularioState.tags.trim().split(" "),
+    });
 
     // ZERAR FORMULARIO
     props.setFormularioState({
@@ -60,7 +59,9 @@ function Formulario(props) {
       <form onSubmit={handleClick}>
         <div className="divForm">
           <div className="formulario">
-            <label htmlFor="titulo">Titulo</label>
+            <label htmlFor="titulo">
+              <strong>Titulo</strong>
+            </label>
             <input
               onChange={handleChange}
               maxLength="45"
@@ -69,7 +70,9 @@ function Formulario(props) {
               value={props.formularioState.titulo}
               placeholder="Titulo do post"
             ></input>
-            <label htmlFor="descricao">Descricao</label>
+            <label htmlFor="descricao">
+              <strong>Descricao</strong>
+            </label>
             <input
               onChange={handleChange}
               maxLength="70"
@@ -78,7 +81,9 @@ function Formulario(props) {
               value={props.formularioState.descricao}
               placeholder="Breve descricao"
             ></input>
-            <label htmlFor="corpo">Corpo</label>
+            <label htmlFor="corpo">
+              <strong>Corpo</strong>
+            </label>
             <textarea
               onChange={handleChange}
               type="textarea"
@@ -87,7 +92,9 @@ function Formulario(props) {
               value={props.formularioState.corpo}
               placeholder="Descricao do post"
             ></textarea>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">
+              <strong>Email</strong>
+            </label>
             <input
               onChange={handleChange}
               type="text"
@@ -96,7 +103,9 @@ function Formulario(props) {
               value={props.formularioState.email}
               placeholder="Email"
             ></input>
-            <label htmlFor="telefone">Telefone</label>
+            <label htmlFor="telefone">
+              <strong>Telefone</strong>
+            </label>
             <input
               onChange={handleChange}
               type="number"
@@ -105,7 +114,9 @@ function Formulario(props) {
               value={props.formularioState.telefone}
               placeholder="Telefone"
             ></input>
-            <label htmlFor="imagem">Foto</label>
+            <label htmlFor="imagem">
+              <strong>Foto</strong>
+            </label>
             <input
               onChange={handleChange}
               type="text"
@@ -113,7 +124,9 @@ function Formulario(props) {
               value={props.formularioState.imagem}
               placeholder="URL da imagem"
             ></input>
-            <label htmlFor="tags">Tags</label>
+            <label htmlFor="tags">
+              <strong>Tags</strong>
+            </label>
             <p>
               <small>(separe por espacos)</small>
             </p>
