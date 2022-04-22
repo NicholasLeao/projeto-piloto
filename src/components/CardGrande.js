@@ -1,4 +1,5 @@
 import "../styles/Card.css";
+import { Link } from "react-router-dom";
 
 function CardGrande(props) {
   const { data, handleFormBoolState } = props;
@@ -21,12 +22,14 @@ function CardGrande(props) {
           {data.tags.map((tag, idx) => {
             return (
               <li key={`${data._id}tagG${idx}`}>
-                <button
-                  style={{ backgroundColor: `${tagColor(idx)}` }}
-                  id={`btn${idx + 1}`}
-                >
-                  {tag}
-                </button>
+                <Link to={`/tags/${tag}`}>
+                  <button
+                    style={{ backgroundColor: `${tagColor(idx)}` }}
+                    id={`btn${idx + 1}`}
+                  >
+                    {tag}
+                  </button>
+                </Link>
               </li>
             );
           })}
@@ -55,10 +58,7 @@ function CardGrande(props) {
           >
             SAIBA MENOS
           </button>
-          <button
-            onClick={handleFormBoolState}
-            className={"saiba-menos-btn"}
-          >
+          <button onClick={handleFormBoolState} className={"saiba-menos-btn"}>
             EDITAR
           </button>
         </div>

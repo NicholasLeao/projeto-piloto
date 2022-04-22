@@ -6,10 +6,15 @@ import FormularioButton from "../components/FormularioButton";
 import axios from "axios";
 import CardContainer from "../components/CardContainer";
 import CardGrandeForm from "../components/CardGrandeForm";
-
+import { Routes, Route } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 function Home() {
-  // STATES
+  // PARAMS
+  const { pathname } = useLocation();
+  const path = pathname.replace("/tags/", "");
 
+  // STATES
   const [fetchDataState, setFetchDataState] = useState([]);
   const [formToggleState, setFormToggleState] = useState(false);
 
@@ -58,15 +63,20 @@ function Home() {
               setFormularioState={setFormularioState}
             />
           )}
-
-          {/* ========= CARDS ================= */}
-          {fetchDataState.map((data) => (
-            <CardContainer data={data} key={`GG${data._id}`} />
-          ))}
-
-      
-
-     
+          <Routes>
+            <Route
+              path="/"
+              element={fetchDataState.map((data) => (
+                <CardContainer data={data} key={`GG${data._id}`} />
+              ))}
+            />
+            <Route
+              path="/tags/:tagName"
+              element={fetchDataState.filter(d=>d.tags.includes(path)).map((data) => (
+                <CardContainer data={data} key={`GG${data._id}`} />
+              ))}
+            />
+          </Routes>
           <Modal />
         </div>
       </main>

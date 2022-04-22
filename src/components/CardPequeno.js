@@ -1,7 +1,10 @@
 import styles from "../styles/CardPequeno.module.css";
 import "../styles/Card.css";
-
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 function CardPequeno(props) {
+  const params = useParams();
+  // console.log("PARAMSCARDPEQUENO", params);
   const { data } = props;
 
   const tagColor = (idx) => {
@@ -31,12 +34,14 @@ function CardPequeno(props) {
             {data.tags.map((tag, idx) => {
               return (
                 <li key={`${data._id}tagG${idx}`}>
-                  <button
-                    style={{ backgroundColor: `${tagColor(idx)}` }}
-                    id={`btn${idx + 1}`}
-                  >
-                    {tag}
-                  </button>
+                  <Link to={`/tags/${tag}`}>
+                    <button
+                      style={{ backgroundColor: `${tagColor(idx)}` }}
+                      id={`btn${idx + 1}`}
+                    >
+                      {tag}
+                    </button>
+                  </Link>
                 </li>
               );
             })}
