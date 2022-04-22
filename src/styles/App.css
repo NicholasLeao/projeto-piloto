@@ -4,6 +4,11 @@
 }
 .app {
   width: 100vw;
+  height: 5000px;
   /* height: 100vh; */
-  background-color: white;
+  background-color: #26a69a;
+}
+
+.main-app {
+  background-color: #26a69a;
 }
