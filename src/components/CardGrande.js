@@ -1,16 +1,7 @@
 import "../styles/Card.css";
 
 function CardGrande(props) {
-  const { data } = props;
-  const handleClickMin = () => {
-    props.setCardMaxState((prev) => {
-      if (!prev.includes(data._id)) {
-        return [...prev, data._id];
-      } else {
-        return [...prev.filter((e) => e !== data._id)];
-      }
-    });
-  };
+  const { data, handleFormBoolState } = props;
 
   const tagColor = (idx) => {
     const colors = ["140, 67, 67", "166, 112, 65", "166, 149, 65"];
@@ -58,8 +49,17 @@ function CardGrande(props) {
           <p>{data.corpo}</p>
         </div>
         <div className="saiba-menos">
-          <button onClick={handleClickMin} className={"saiba-menos-btn"}>
+          <button
+            onClick={props.handleWindowState}
+            className={"saiba-menos-btn"}
+          >
             SAIBA MENOS
+          </button>
+          <button
+            onClick={handleFormBoolState}
+            className={"saiba-menos-btn"}
+          >
+            EDITAR
           </button>
         </div>
       </div>

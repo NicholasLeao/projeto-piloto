@@ -5,10 +5,10 @@ import { useState, useEffect, useCallback } from "react";
 import FormularioButton from "../components/FormularioButton";
 import axios from "axios";
 import CardContainer from "../components/CardContainer";
+import CardGrandeForm from "../components/CardGrandeForm";
 
 function Home() {
   // STATES
-  const [maxCardState, setCardMaxState] = useState([]);
 
   const [fetchDataState, setFetchDataState] = useState([]);
   const [formToggleState, setFormToggleState] = useState(false);
@@ -61,14 +61,12 @@ function Home() {
 
           {/* ========= CARDS ================= */}
           {fetchDataState.map((data) => (
-            <CardContainer
-              maxCardState={maxCardState}
-              setCardMaxState={setCardMaxState}
-              data={data}
-              key={`GG${data._id}`}
-            />
+            <CardContainer data={data} key={`GG${data._id}`} />
           ))}
 
+      
+
+     
           <Modal />
         </div>
       </main>

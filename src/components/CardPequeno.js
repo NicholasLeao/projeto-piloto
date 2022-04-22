@@ -3,22 +3,9 @@ import "../styles/Card.css";
 
 function CardPequeno(props) {
   const { data } = props;
-  const handleClickMax = () => {
-    props.setCardMaxState((prev) => {
-      if (!prev.includes(data._id)) {
-        return [...prev, data._id];
-      } else {
-        return [...prev.filter((e) => e !== data._id)];
-      }
-    });
-  };
 
   const tagColor = (idx) => {
-    const colors = [
-      "140, 67, 67",
-      "166, 112, 65",
-      "166, 149, 65",
-    ];
+    const colors = ["140, 67, 67", "166, 112, 65", "166, 149, 65"];
 
     return `rgb(${colors[idx]})`;
   };
@@ -56,7 +43,7 @@ function CardPequeno(props) {
           </ul>
         </div>
 
-        <button onClick={handleClickMax} className={"saiba-mais"}>
+        <button onClick={props.handleWindowState} className={"saiba-mais"}>
           SAIBA MAIS
         </button>
       </div>
