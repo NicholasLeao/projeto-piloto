@@ -1,19 +1,23 @@
 import CardPequeno from "./CardPequeno";
 import CardGrande from "./CardGrande";
-
+import CardGrandeContainer from "./CardGrandeContainer";
+import { useState } from "react";
 function CardContainer(props) {
+  const [windowSate, setWindowState] = useState(false);
+  const handleWindowState = () => setWindowState((s) => !s);
+
   const { data } = props;
   return (
     <>
-      {!props.maxCardState.includes(data._id) ? (
+      {!windowSate ? (
         <CardPequeno
-          setCardMaxState={props.setCardMaxState}
+          handleWindowState={handleWindowState}
           data={data}
           key={data._id}
         />
       ) : (
-        <CardGrande
-          setCardMaxState={props.setCardMaxState}
+        <CardGrandeContainer
+          handleWindowState={handleWindowState}
           data={data}
           key={`G${data._id}`}
         />
